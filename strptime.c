@@ -241,6 +241,27 @@ label:
 			flags |= FLAG_YDAY;
 
 			break;
+			
+		case 'f':
+		    /* CockroachDB extension: nanoseconds */
+			if (!isdigit_l((unsigned char)*buf, locale))
+				return (NULL);
+
+			len = 9;
+			for (i = 0; len && *buf != 0 &&
+			     isdigit_l((unsigned char)*buf, locale); buf++){
+				i *= 10;
+				i += *buf - '0';
+				len--;
+			}
+			while (len) {
+			    i *= 10;
+			    len--;
+			}
+
+			tm->tm_nsec = i;
+
+			break;
 
 		case 'M':
 		case 'S':

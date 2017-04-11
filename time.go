@@ -29,7 +29,7 @@ func Strptime(value string, layout string) (time.Time, error) {
 		int(cTime.tm_hour),
 		int(cTime.tm_min),
 		int(cTime.tm_sec),
-		0,
+		int(cTime.tm_nsec),
 		time.FixedZone(C.GoString(cTime.tm_zone), int(cTime.tm_gmtoff)),
 	), nil
 }

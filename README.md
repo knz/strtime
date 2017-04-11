@@ -52,6 +52,7 @@ Examples:
 | `%d` | Day of month 01-31 |
 | `%D` | Equivalent to `%m/%d/%y` |
 | `%e` | Like `%d` but leading zeros are replaced by a space. |
+| `%f` | Fractional part of a second with nanosecond precision, e.g. "`123`" is 123ms; "`123456`" is 123456µs, etc. | `Strftime` always formats using 9 digits.
 | `%F` | Equivalent to `%Y-%m-%d` |
 | `%h` | Equivalent to `%b` |
 | `%H` | Hours 00-23  | See also `%k`

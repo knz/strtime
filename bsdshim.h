@@ -79,6 +79,7 @@ struct mytm {
         int     tm_isdst;       /* Daylight Savings Time flag */
         long    tm_gmtoff;      /* offset from UTC in seconds */
         char    *tm_zone;       /* timezone abbreviation */
+        long    tm_nsec;        /* nanoseconds */
 };
 
 static int
