@@ -59,6 +59,9 @@
 // #include "libc_private.h"
 #include "timelocal.h"
 // #include "tzfile.h"
+#ifdef __sun
+#include <alloca.h>
+#endif
 
 static char * _strptime(const char *, const char *, struct mytm *, int *, locale_t);
 
