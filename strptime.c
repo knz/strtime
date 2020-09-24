@@ -582,18 +582,18 @@ label:
 		case 'Z':
 			{
 			const char *cp;
-			char *zonestr;
+			//char *zonestr;
 
 			for (cp = buf; *cp &&
 			     isupper_l((unsigned char)*cp, locale); ++cp) {
 				/*empty*/}
 			if (cp - buf) {
-				zonestr = alloca(cp - buf + 1);
-				strncpy(zonestr, buf, cp - buf);
-				zonestr[cp - buf] = '\0';
+				//zonestr = alloca(cp - buf + 1);
+				//strncpy(zonestr, buf, cp - buf);
+				//zonestr[cp - buf] = '\0';
 				//tzset();
-				if (0 == strcmp(zonestr, "GMT") ||
-				    0 == strcmp(zonestr, "UTC")) {
+				if (0 == strncmp(buf, "GMT", cp - buf) ||
+				    0 == strncmp(buf, "UTC", cp - buf)) {
 				    *GMTp = 1;
 				// } else if (0 == strcmp(zonestr, tzname[0])) {
 				//     tm->tm_isdst = 0;
